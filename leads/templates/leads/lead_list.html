@@ -15,6 +15,7 @@
             text-align: center;
             box-shadow: 10px 10px 5px;
 
+
             a {
                 text-decoration: none;
                 color: black;
@@ -24,20 +25,39 @@
             a:hover {
                 opacity: 0.5;
             }
+
+        }
+
+        .main-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+            flex-flow: wrap;
         }
     </style>
 </head>
 
 
 <body>
-    <h1>This is all of our leads</h1>
-    {% for lead in leads %}
-    <div class="lead">
-        <a href="/leads/{{ lead.pk }}/">{{lead.first_name}} {{lead.last_name}}</a>
 
-        <h3>Age: {{lead.age}}</h3>
+    <a href="/leads/create">Create a new lead</a>
+    <hr>
+    <div class="main-container">
+        <h1>This is all of our leads</h1>
+        {% for lead in leads %}
+
+        <div class="lead">
+            <a href="/leads/{{ lead.pk }}/">{{lead.first_name}} {{lead.last_name}}</a>
+
+            <h3>Age: {{lead.age}}</h3>
+        </div>
+
+
+        {% endfor %}
+
     </div>
-    {% endfor %}
 
 </body>
 
