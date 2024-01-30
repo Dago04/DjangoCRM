@@ -1,16 +1,17 @@
-{% extends 'base.html' %} {% block content %}
-<a href="{% url 'leads:lead-create' %}">Create a new lead</a>
-<hr />
+{% extends 'base.html' %} 
+{% block content %}
+  <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
+  <hr />
 
-<h1>This is all of our leads</h1>
-{% for lead in leads %}
+  <h1>This is all of our leads</h1>
+  {% for lead in leads %}
 
-<div class="lead">
-  <a href="{% url 'leads:lead-detail' lead.pk %}"
-    >{{lead.first_name}} {{lead.last_name}}</a
-  >
+  <div class="lead">
+    <a href="{% url 'leads:lead-detail' lead.pk %}"
+      >{{lead.first_name}} {{lead.last_name}}</a
+    >
 
-  <h3>Age: {{lead.age}}</h3>
-</div>
+    <h3>Age: {{lead.age}}</h3>
+  </div>
 
 {% endfor %} {% endblock content %}
