@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lead Detail</title>
 
     <style>
-        .lead {
-            padding: 10px 6px;
-            margin-top: 10px;
-            background-color: #f6f6f6;
-            width: 250px;
-            text-align: center;
-            box-shadow: 10px 10px 5px;
-        }
+      .lead {
+        padding: 10px 6px;
+        margin-top: 10px;
+        background-color: #f6f6f6;
+        width: 100%;
+        text-align: center;
+        box-shadow: 10px 10px 5px;
+      }
     </style>
-</head>
+  </head>
 
-
-<body>
+  <body>
     <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
-    <hr>
+    <hr />
     <h1>This is the detail of {{lead.first_name}}</h1>
-    <p>
-        This person age is {{lead.age}}
-    </p>
+    <p>This person age is {{lead.age}}</p>
     <p>The Agent responsible for this lead is {{lead.agent}}</p>
-    <hr>
+    <hr />
     <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
     <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
-</body>
-
+  </body>
 </html>
